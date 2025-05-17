@@ -1,7 +1,7 @@
 import { Injectable, BadRequestException, NotFoundException, ConflictException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Estudiante } from '../entities/estudiante.entity ';
+import { Estudiante } from '../entities/estudiante.entity';
 import { Proyecto } from '../entities/proyecto.entity';
 
 @Injectable()
@@ -47,5 +47,20 @@ export class EstudianteService {
       throw new ConflictException('No se puede eliminar un estudiante con proyectos activos');
     }
     await this.estudianteRepository.delete(id);
+  }
+
+  async findAll(): Promise<Estudiante[]> {
+    return this.estudianteRepository.find({
+      relations: ['proyectos', 'proyectosLiderados'],
+    });
+  }
+
+  async findOne(id: number): Promise<Estudiante> {
+    const estudiante = await this.estudianteRepository.findOne({
+      where: { id },
+      relations: ['proyectos', 'proyectosLiderados'],
+    });
+    if (!estudiante) throw new NotFoundException('Estudiante no encontrado');
+    return estudiante;
   }
 }

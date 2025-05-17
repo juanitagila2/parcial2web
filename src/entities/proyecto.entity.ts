@@ -7,7 +7,7 @@ import {
   ManyToMany,
   JoinTable,
 } from 'typeorm';
-import { Estudiante } from './estudiante.entity ';
+import { Estudiante } from './estudiante.entity';
 import { Profesor } from './profesor.entity';
 import { Evaluacion } from './evaluacion.entity';
 
