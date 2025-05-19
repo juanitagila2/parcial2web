@@ -3,6 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Proyecto } from '../entities/proyecto.entity';
 import { Estudiante } from '../entities/estudiante.entity';
+import { Profesor } from '../entities/profesor.entity';
 
 @Injectable()
 export class ProyectoService {
@@ -11,6 +12,8 @@ export class ProyectoService {
     private proyectoRepository: Repository<Proyecto>,
     @InjectRepository(Estudiante)
     private estudianteRepository: Repository<Estudiante>,
+    @InjectRepository(Profesor)
+    private profesorRepository: Repository<Profesor>
   ) {}
 
   async crearProyecto(proyectoData: Partial<Proyecto>): Promise<Proyecto> {
@@ -34,12 +37,14 @@ export class ProyectoService {
     return this.proyectoRepository.save(proyecto);
   }
 
-  async findAllEstudiantes(proyectoId: number): Promise<Estudiante[]> {
+  async findLider(proyectoId: number): Promise<Estudiante> {
     const proyecto = await this.proyectoRepository.findOne({
       where: { id: proyectoId },
-      relations: ['estudiantes'],
+      relations: ['lider'], 
     });
     if (!proyecto) throw new NotFoundException('Proyecto no encontrado');
-    return proyecto.estudiantes;
-  }
+    if (!proyecto.lider) throw new NotFoundException('Proyecto no tiene líder asignado');
+    return proyecto.lider;
+}
+
 }

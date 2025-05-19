@@ -38,7 +38,7 @@ export class EstudianteService {
     if (!estudiante) throw new NotFoundException('Estudiante no encontrado');
 
     const proyectosActivos = estudiante.proyectosLiderados.filter(
-      proyecto => proyecto.estado === 1 // estado activo
+      proyecto => proyecto.estado === 1 
     );
 
     if (proyectosActivos.length > 0) {

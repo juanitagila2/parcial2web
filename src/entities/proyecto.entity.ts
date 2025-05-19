@@ -40,10 +40,6 @@ export class Proyecto {
   @ManyToOne(() => Estudiante, estudiante => estudiante.proyectosLiderados)
   lider: Estudiante;
 
-  @ManyToMany(() => Estudiante, estudiante => estudiante.proyectos)
-  @JoinTable()
-  estudiantes: Estudiante[];
-
   @OneToMany(() => Evaluacion, evaluacion => evaluacion.proyecto)
   evaluaciones: Evaluacion[];
 

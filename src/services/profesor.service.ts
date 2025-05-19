@@ -36,7 +36,7 @@ export class ProfesorService {
     });
 
     if (evaluacionesActivas >= 3) {
-      throw new BadRequestException('El profesor ya tiene 3 evaluaciones activas');
+      throw new ConflictException('El profesor ya tiene 3 evaluaciones activas');
     }
 
     const evaluacion = await this.evaluacionRepository.findOne({ where: { id: evaluacionId } });

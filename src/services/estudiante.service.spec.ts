@@ -101,13 +101,16 @@ describe('EstudianteService', () => {
       semestre: 5,
       programa: 'Ingeniería',
       promedio: 4.0,
-      proyectos: [],
-      proyectosLiderados: [],
+      proyectosLiderados: [
+        { estado: 1 }  // <-- proyecto activo simulado
+      ],
     } as Estudiante;
+
     jest.spyOn(estudianteRepo, 'findOne').mockResolvedValue(estudiante);
-    jest.spyOn(proyectoRepo, 'count').mockResolvedValue(2);
+    // No necesitas mockear proyectoRepo.count ni estudianteRepo.delete porque no se llegan a usar en este caso
 
     await expect(service.eliminarEstudiante(1)).rejects.toThrow(ConflictException);
   });
+
 
 });
