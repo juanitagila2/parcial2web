@@ -3,7 +3,6 @@ import {
   Column,
   PrimaryGeneratedColumn,
   OneToMany,
-  ManyToMany,
 } from 'typeorm';
 import { Proyecto } from './proyecto.entity';
 
@@ -29,7 +28,4 @@ export class Estudiante {
 
   @OneToMany(() => Proyecto, proyecto => proyecto.lider)
   proyectosLiderados: Proyecto[];
-
-  @ManyToMany(() => Proyecto, proyecto => proyecto.estudiantes)
-  proyectos: Proyecto[];
 }

@@ -33,34 +33,19 @@ export class EstudianteService {
   async eliminarEstudiante(id: number): Promise<void> {
     const estudiante = await this.estudianteRepository.findOne({
       where: { id },
-      relations: ['proyectos', 'proyectosLiderados'],
+      relations: ['proyectosLiderados'],
     });
     if (!estudiante) throw new NotFoundException('Estudiante no encontrado');
 
-    const proyectosActivos = await this.proyectoRepository.count({
-      where: [
-        { estudiantes: { id }, estado: 1 },
-        { lider: { id }, estado: 1 },
-      ],
-    });
-    if (proyectosActivos > 0) {
+    const proyectosActivos = estudiante.proyectosLiderados.filter(
+      proyecto => proyecto.estado === 1 // estado activo
+    );
+
+    if (proyectosActivos.length > 0) {
       throw new ConflictException('No se puede eliminar un estudiante con proyectos activos');
     }
+
     await this.estudianteRepository.delete(id);
   }
 
-  async findAll(): Promise<Estudiante[]> {
-    return this.estudianteRepository.find({
-      relations: ['proyectos', 'proyectosLiderados'],
-    });
-  }
-
-  async findOne(id: number): Promise<Estudiante> {
-    const estudiante = await this.estudianteRepository.findOne({
-      where: { id },
-      relations: ['proyectos', 'proyectosLiderados'],
-    });
-    if (!estudiante) throw new NotFoundException('Estudiante no encontrado');
-    return estudiante;
-  }
 }
