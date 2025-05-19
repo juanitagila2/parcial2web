@@ -1,0 +1,1193 @@
+{
+	"info": {
+		"_postman_id": "86870234-0230-4f12-aeb2-52a21241c14b",
+		"name": "Parcial2 API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23394110"
+	},
+	"item": [
+		{
+			"name": "crearEstudiante",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"cedula\": 123,\r\n  \"nombre\": \"Juan\",\r\n  \"semestre\": 5,\r\n  \"programa\": \"Ingeniería\",\r\n  \"promedio\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/estudiantes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"estudiantes"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "crearEstudiante OK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cedula\": 123,\r\n  \"nombre\": \"Juan\",\r\n  \"semestre\": 5,\r\n  \"programa\": \"Ingeniería\",\r\n  \"promedio\": 4.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/estudiantes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"estudiantes"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "88"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"58-gHbe2C8t8Pt5AzlBglM5eCzoN/g\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 18 May 2025 23:40:51 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"cedula\": 123,\n    \"nombre\": \"Juan\",\n    \"semestre\": 5,\n    \"programa\": \"Ingeniería\",\n    \"promedio\": 4\n}"
+				},
+				{
+					"name": "crearEstudiante ERROR",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cedula\": 123,\r\n  \"nombre\": \"Juan\",\r\n  \"semestre\": 5,\r\n  \"programa\": \"Ingeniería\",\r\n  \"promedio\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/estudiantes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"estudiantes"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "85"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"55-lft/LqFkTxT+wWOm21p4EdxLvW0\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 18 May 2025 23:53:59 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"El promedio debe ser mayor a 3.2\",\n    \"error\": \"Bad Request\",\n    \"statusCode\": 400\n}"
+				}
+			]
+		},
+		{
+			"name": "eliminarEstudiante",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/estudiantes/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"estudiantes",
+						"4"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "eliminarEstudiante OK",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/estudiantes/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"estudiantes",
+								"4"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "49"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"31-3z1D8I4IbVqNbgek9Lt1VPwilaQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 19 May 2025 00:11:16 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Se eliminó el estudiante con id: 4\"\n}"
+				},
+				{
+					"name": "eliminarEstudiante ERROR",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/estudiantes/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"estudiantes",
+								"2"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "75"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4b-97tBEvmKynROkZTgxExK8u/HvOI\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 19 May 2025 00:10:31 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Estudiante no encontrado\",\n    \"error\": \"Not Found\",\n    \"statusCode\": 404\n}"
+				}
+			]
+		},
+		{
+			"name": "crearProfesor",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"cedula\": 53434,\r\n  \"nombre\": \"Juan\",\r\n  \"departamento\": \"Ciencias\",\r\n  \"extension\": 45566,\r\n  \"esParEvaluado\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/profesores",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"profesores"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "crearProfesor OK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cedula\": 456,\r\n  \"nombre\": \"Ana\",\r\n  \"departamento\": \"Matemáticas\",\r\n  \"extension\": 12345,\r\n  \"esParEvaluado\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/profesores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"profesores"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "106"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"6a-DfBCT1f47mbzxKSl6K2/TZwvZvE\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 19 May 2025 00:13:37 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"cedula\": 456,\n    \"nombre\": \"Ana\",\n    \"departamento\": \"Matemáticas\",\n    \"extension\": 12345,\n    \"esParEvaluado\": false,\n    \"id\": 1\n}"
+				},
+				{
+					"name": "crearProfesor ERROR",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cedula\": 456,\r\n  \"nombre\": \"Ana\",\r\n  \"departamento\": \"Matemáticas\",\r\n  \"extension\": 1235,\r\n  \"esParEvaluado\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/profesores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"profesores"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "100"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"64-Me6ArERMtbI9pJrZ/E6shEnL/2I\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 19 May 2025 00:14:11 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"La extensión debe tener exactamente 5 dígitos\",\n    \"error\": \"Bad Request\",\n    \"statusCode\": 400\n}"
+				}
+			]
+		},
+		{
+			"name": "crearEvaluacion",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"profesorId\": 1,\r\n  \"proyectoId\": 2,\r\n  \"calificacion\": 4\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/evaluacion",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"evaluacion"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "crearEvaluacion OK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"profesorId\": 1,\r\n  \"proyectoId\": 2,\r\n  \"calificacion\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/evaluacion",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"evaluacion"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "306"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"132-vWneHuHDIiUF62dOJahRGgNUS/g\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 19 May 2025 00:52:11 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"profesor\": {\n        \"cedula\": 456,\n        \"nombre\": \"Ana\",\n        \"departamento\": \"Matemáticas\",\n        \"extension\": 12345,\n        \"esParEvaluado\": false,\n        \"id\": 1\n    },\n    \"proyecto\": {\n        \"id\": 2,\n        \"titulo\": \"MiAplicacionCiencias\",\n        \"area\": \"ciencias\",\n        \"presupuesto\": 10000,\n        \"notaFinal\": 4,\n        \"estado\": 2,\n        \"fechaInicio\": \"05/03/2024\",\n        \"fechaFin\": \"07/11/2024\",\n        \"mentores\": []\n    }\n}"
+				},
+				{
+					"name": "crearEvaluacion ERROR",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"profesorId\": 1,\r\n  \"proyectoId\": 7,\r\n  \"calificacion\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/evaluacion",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"evaluacion"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "98"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"62-JV1lmKvHOOpma0Y7BkZI1SC3Ei0\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 19 May 2025 02:35:29 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"El evaluador no puede ser mentor del proyecto\",\n    \"error\": \"Bad Request\",\n    \"statusCode\": 400\n}"
+				}
+			]
+		},
+		{
+			"name": "crearProyecto",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"titulo\": \"MiAplicacionCiencias\",\r\n  \"area\": \"ciencias\",\r\n  \"presupuesto\": 10000,\r\n  \"notaFinal\": 4,\r\n  \"estado\": 2,\r\n  \"fechaInicio\": \"05/03/2024\",\r\n  \"fechaFin\": \"07/11/2024\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/proyectos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"proyectos"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "crearProyecto OK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"titulo\": \"Sistema Inteligente de Diagnóstico Médico\",\r\n  \"area\": \"Inteligencia Artificial\",\r\n  \"presupuesto\": 25000,\r\n  \"notaFinal\": 0,\r\n  \"estado\": 1,\r\n  \"fechaInicio\": \"2025-01-10\",\r\n  \"fechaFin\": \"2025-12-10\",\r\n  \"lider\": {\r\n    \"id\": 3\r\n  },\r\n  \"mentores\": [\r\n    { \"id\": 1 },\r\n    { \"id\": 2 }\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/proyectos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"proyectos"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "240"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"f0-8d1Hd+WM5JWsP2Nr3cWlcFsA4YE\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 19 May 2025 02:30:51 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 7,\n    \"titulo\": \"Sistema Inteligente de Diagnóstico Médico\",\n    \"area\": \"Inteligencia Artificial\",\n    \"presupuesto\": 25000,\n    \"notaFinal\": 0,\n    \"estado\": 1,\n    \"fechaInicio\": \"2025-01-10\",\n    \"fechaFin\": \"2025-12-10\",\n    \"lider\": {\n        \"id\": 3\n    },\n    \"mentores\": [\n        {\n            \"id\": 1\n        },\n        {\n            \"id\": 2\n        }\n    ]\n}"
+				},
+				{
+					"name": "crearProyecto ERROR",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"titulo\": \"Sistema Inteligente de Diagnóstico Médico\",\r\n  \"area\": \"Inteligencia Artificial\",\r\n  \"presupuesto\": 0,\r\n  \"notaFinal\": 0,\r\n  \"estado\": 1,\r\n  \"fechaInicio\": \"2025-01-10\",\r\n  \"fechaFin\": \"2025-12-10\",\r\n  \"lider\": {\r\n    \"id\": 3\r\n  },\r\n  \"mentores\": [\r\n    { \"id\": 1 },\r\n    { \"id\": 2 }\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/proyectos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"proyectos"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "86"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"56-N5mftkyMJRa9krtPa3Zk6fftp/Y\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 19 May 2025 02:31:36 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"El presupuesto debe ser mayor a 0\",\n    \"error\": \"Bad Request\",\n    \"statusCode\": 400\n}"
+				}
+			]
+		},
+		{
+			"name": "asignarEvaluador",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/profesores/2/evaluaciones/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"profesores",
+						"2",
+						"evaluaciones",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "asignarEvaluador OK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/profesores/2/evaluaciones/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"profesores",
+								"2",
+								"evaluaciones",
+								"1"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "126"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"7e-7LameuCIXz3uEwBMFtIzis51yUU\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 19 May 2025 02:49:06 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"profesor\": {\n        \"cedula\": 456,\n        \"nombre\": \"Ana\",\n        \"departamento\": \"Matemáticas\",\n        \"extension\": 12345,\n        \"esParEvaluado\": false,\n        \"id\": 2\n    }\n}"
+				},
+				{
+					"name": "asignarEvaluador ERROR",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/profesores/3/evaluaciones/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"profesores",
+								"3",
+								"evaluaciones",
+								"1"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "96"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"60-xGkKxqUBbZSt0jT6Zo1lOG/IvEM\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 19 May 2025 02:48:16 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"El profesor ya tiene 3 evaluaciones activas\",\n    \"error\": \"Bad Request\",\n    \"statusCode\": 400\n}"
+				}
+			]
+		},
+		{
+			"name": "avanzarProyecto",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/proyectos/3/avanzar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"proyectos",
+						"3",
+						"avanzar"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "avanzarProyecto OK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/proyectos/3/avanzar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"proyectos",
+								"3",
+								"avanzar"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "154"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"9a-FqsOB8Usj+1Tf9NoUgRjzqyFLrg\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 19 May 2025 02:52:50 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 3,\n    \"titulo\": \"MiAplicacionCiencias\",\n    \"area\": \"ciencias\",\n    \"presupuesto\": 10000,\n    \"notaFinal\": 4,\n    \"estado\": 3,\n    \"fechaInicio\": \"05/03/2024\",\n    \"fechaFin\": \"07/11/2024\"\n}"
+				},
+				{
+					"name": "avanzarProyecto ERROR",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/proyectos/5/avanzar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"proyectos",
+								"5",
+								"avanzar"
+							]
+						}
+					},
+					"status": "Conflict",
+					"code": 409,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "91"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"5b-gLORZNUpVxVEwjYAJy9DB4psMXk\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 19 May 2025 02:52:25 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"El proyecto ya está en su estado máximo\",\n    \"error\": \"Conflict\",\n    \"statusCode\": 409\n}"
+				}
+			]
+		},
+		{
+			"name": "findLider (findAllEstudiantes)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/proyectos/7/lider",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"proyectos",
+						"7",
+						"lider"
+					]
+				},
+				"description": "### Get Project Leader Information\n\nThis endpoint makes an HTTP GET request to retrieve the leader information for a specific project.\n\n#### Request\n\n- Method: GET\n    \n- URL: `http://localhost:3000/proyectos/7/lider`\n    \n\n#### Response\n\nThe response for this request follows the JSON schema below:\n\n``` json\n{\n    \"type\": \"object\",\n    \"properties\": {\n        \"id\": {\n            \"type\": \"integer\"\n        },\n        \"cedula\": {\n            \"type\": \"integer\"\n        },\n        \"nombre\": {\n            \"type\": \"string\"\n        },\n        \"semestre\": {\n            \"type\": \"integer\"\n        },\n        \"programa\": {\n            \"type\": \"string\"\n        },\n        \"promedio\": {\n            \"type\": \"number\"\n        }\n    }\n}\n\n ```"
+			},
+			"response": [
+				{
+					"name": "findLider (findAllEstudiantes) OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/proyectos/7/lider",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"proyectos",
+								"7",
+								"lider"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "88"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"58-GzPMvNsJfoc0Ij6uXteMVnJ174k\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 19 May 2025 02:58:40 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 3,\n    \"cedula\": 123,\n    \"nombre\": \"Juan\",\n    \"semestre\": 5,\n    \"programa\": \"Ingeniería\",\n    \"promedio\": 4\n}"
+				},
+				{
+					"name": "findLider (findAllEstudiantes) ERROR",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/proyectos/3/lider",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"proyectos",
+								"3",
+								"lider"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "84"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"54-eb/aEeF4SWxwJ5Jcb6qGxVTjFrU\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 19 May 2025 02:58:55 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Proyecto no tiene líder asignado\",\n    \"error\": \"Not Found\",\n    \"statusCode\": 404\n}"
+				}
+			]
+		}
+	]
+}
